@@ -6,8 +6,8 @@ Import the module in the main python file and create an object of the class "Mat
 
 **Warning**:The work is in progress.
 
-*`inputMatrix()`
+* `inputMatrix()`
 The Function inputs matrix one row at a time, enter the elements seperated by space.
 
-*`printMatrix()`
+* `printMatrix()`
 The function displays the matrix on the screen.
