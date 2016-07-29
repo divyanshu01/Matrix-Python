@@ -1,15 +1,13 @@
 # Matrix-Python
 
-Below is the guide to use the library:
+##Below is the guide to use the library:##
 
-Import the module in the main python file and create an object of the class "Matrix".
+Import the module in the main python file and create an object of the class "Matrix".The Library is only for square matrices yet and the basic functions that can be performed on non-square matrices will be added soon.
 
-The Library is only for square matrices yet.
+**Warning**:The work is in progress.
 
-The work is in progress.
-
-inputMatrix()
+*`inputMatrix()`
 The Function inputs matrix one row at a time, enter the elements seperated by space.
 
-printMatrix()
+*`printMatrix()`
 The function displays the matrix on the screen.
