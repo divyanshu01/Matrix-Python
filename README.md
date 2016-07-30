@@ -18,3 +18,6 @@ Import the module in the main python file and create an object of the class "Mat
 
 * `subMatrix(Matrix obj)`
 >The function returns the `Matrix` instance of the subtraction of the calling `Matrix` instance and the `Matrix` passed as argument.
+
+* `transMatrix()`
+>The function turns the matrix into its transpose.
