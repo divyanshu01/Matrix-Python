@@ -45,3 +45,21 @@ class Matrix:
 				print("Number of columns are not equal")
 		else:
 			print("Number of rows are not equal")
+
+	def subMatrix(self, mat):
+		if self.no_of_row == mat.no_of_row:
+			if self.no_of_col == mat.no_of_col:
+				m = Matrix()
+				m.no_of_row = self.no_of_row
+				m.no_of_col = self.no_of_col
+				print(m.matrix_list)
+				for i in range(self.no_of_row):
+					temp_list = []
+					for j in range(self.no_of_col):
+						temp_list.append(self.matrix_list[i][j] - mat.matrix_list[i][j])
+					m.matrix_list.append(temp_list)
+				return m
+			else:
+				print("Number of columns are not equal")
+		else:
+			print("Number of rows are not equal")
