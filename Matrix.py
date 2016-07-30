@@ -63,3 +63,10 @@ class Matrix:
 				print("Number of columns are not equal")
 		else:
 			print("Number of rows are not equal")
+	
+	def transMatrix(self):
+		for i in range(self.no_of_row):
+			for j in range(self.no_of_col):
+				if i > j:
+					self.matrix_list[i][j], self.matrix_list[j][i] = self.matrix_list[j][i], self.matrix_list[i][j]
+	
