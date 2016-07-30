@@ -7,7 +7,7 @@ Import the module in the main python file and create an object of the class "Mat
 **Warning**:The work is in progress.
 - - - -
 
-* `addMatrix()`
+* `addMatrix(Matrix obj)`
 >The function add the calling instance of `Matrix` to the `Matrix` instance passed as argument and returns the resultant `Matrix` instance
 
 * `inputMatrix()`
@@ -15,3 +15,6 @@ Import the module in the main python file and create an object of the class "Mat
 
 * `printMatrix()`
 >The function displays the matrix on the screen.
+
+* `subMatrix(Matrix obj)`
+>The function returns the `Matrix` instance of the subtraction of the calling `Matrix` instance and the `Matrix` passed as argument.
