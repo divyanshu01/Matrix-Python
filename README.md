@@ -7,6 +7,9 @@ Import the module in the main python file and create an object of the class "Mat
 **Warning**:The work is in progress.
 - - - -
 
+* `addMatrix()`
+>The function add the calling instance of `Matrix` to the `Matrix` instance passed as argument and returns the resultant `Matrix` instance
+
 * `inputMatrix()`
 >The Function inputs matrix one row at a time, enter the elements seperated by space.
 
