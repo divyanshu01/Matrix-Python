@@ -19,6 +19,21 @@ class Matrix:
 		else :
 			print("The matrix is not a square matrix")
 	
+	def mulMatrix(self, m):
+		if self.no_of_col == m.no_of_row:
+			obj = Matrix()
+			obj.no_of_row = self.no_of_row
+			obj.no_of_col = m.no_of_col
+			for i in range(self.no_of_row):
+				temp_list = []
+				for k in range(m.no_of_col):
+					temp = 0
+					for j in range(m.no_of_row):
+						temp += self.matrix_list[i][j] * m.matrix_list[j][k]
+					temp_list.append(temp)
+				obj.matrix_list.append(temp_list)
+			return obj
+	
 	def printMatrix(self):
 		if len(self.matrix_list) != 0:
 			for i in range(self.no_of_row):
