@@ -4,6 +4,10 @@
 
 Import the module in the main python file and create an object of the class "Matrix".The Library is only for square matrices yet and the basic functions that can be performed on non-square matrices will be added soon. The following project uses Python 3.x.
 
+####About files included####
+* **Matrix.py** is the main module that is supposed to be imported in the main file.
+* **Driver.py** is a driver script used to test the module for its different functionalities.
+
 **Warning**:The work is in progress.
 - - - -
 
