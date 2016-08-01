@@ -13,6 +13,9 @@ Import the module in the main python file and create an object of the class "Mat
 * `inputMatrix()`
 >The Function inputs matrix one row at a time, enter the elements seperated by space.
 
+* `mulMatrix(Matrix obj)`
+>The function returns a `Matrix` object which is the multiplied result of the calling object and the object passed as argument.
+
 * `printMatrix()`
 >The function displays the matrix on the screen.
 
