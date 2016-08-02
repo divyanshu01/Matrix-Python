@@ -40,7 +40,7 @@ class Matrix:
 			return obj
 	
 	def mulScalarMatrix(self, scalar):
-		for i in range(self.no_row_row):
+		for i in range(self.no_of_row):
 			for j in range(self.no_of_col):
 				self.matrix_list[i][j] *= scalar
 	
