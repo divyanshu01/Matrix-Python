@@ -19,3 +19,7 @@ m2.inputMatrix()
 #m = m1.mulMatrix(m2)
 
 #m.printMatrix()
+
+#m1.mulScalarMatrix(5)
+#m1.divScalarMatrix(5)
+#m1.printMatrix()
