@@ -31,6 +31,14 @@ class Matrix:
 				det += ((-1)**i) * self.matrix_list[0][i] * self.getMinor(self.matrix_list, i)
 			return det
 	
+	def divScalarMatrix(self, scalar):
+		if(scalar != 0):
+			for i in range(self.no_of_row):
+				for j in range(self.no_of_col):
+					self.matrix_list[i][j] /= scalar
+		else:
+			print("Division not possible")
+	
 	def inputMatrix(self):
 		self.no_of_row = int(input("Enter number of rows for the matrix \n"))
 		self.no_of_col = int(input("Enter number of columns for the matrix \n"))
@@ -59,6 +67,11 @@ class Matrix:
 					temp_list.append(temp)
 				obj.matrix_list.append(temp_list)
 			return obj
+	
+	def mulScalarMatrix(self, scalar):
+		for i in range(self.no_of_row):
+			for j in range(self.no_of_col):
+				self.matrix_list[i][j] *= scalar
 	
 	def printMatrix(self):
 		if len(self.matrix_list) != 0:
