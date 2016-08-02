@@ -1,10 +1,36 @@
+import copy
 class Matrix:
 
 	def __init__(self):
 		self.matrix_list = []
 		self.no_of_row = 0
 		self.no_of_col = 0
-
+	
+	def getMinor(self, matrix_list, j):
+		#print("Entry:", matrix_list)
+		matrix = copy.deepcopy(matrix_list)
+		del matrix[0]
+		for i in range(len(matrix)):
+			del matrix[i][j]
+		#print("After deletions", matrix_list)
+		
+		m = Matrix()
+		m.matrix_list = matrix[:]
+		m.no_of_row = len(m.matrix_list)
+		m.no_of_col = len(m.matrix_list[0])
+		x = m.detMatrix()
+		#print(m.matrix_list, m.no_of_row, m.no_of_col)
+		return x
+	
+	def detMatrix(self):
+		if self.no_of_row == 2 and self.no_of_col == 2:
+			return self.matrix_list[0][0] * self.matrix_list[1][1] - self.matrix_list[0][1] * self.matrix_list[1][0]
+		else:
+			det = 0
+			for i in range(self.no_of_col):
+				det += ((-1)**i) * self.matrix_list[0][i] * self.getMinor(self.matrix_list, i)
+			return det
+	
 	def inputMatrix(self):
 		self.no_of_row = int(input("Enter number of rows for the matrix \n"))
 		self.no_of_col = int(input("Enter number of columns for the matrix \n"))
@@ -85,22 +111,6 @@ class Matrix:
 				if i > j:
 					self.matrix_list[i][j], self.matrix_list[j][i] = self.matrix_list[j][i], self.matrix_list[i][j]
 	
-	def getMinor(self, matrix, j):
-		del matrix[0]
-		for i in range(len(matrix)):
-			del matrix[i][j]
-		
-		m = Matrix()
-		m.matrix_list = matrix[:]
-		m.no_of_row = len(m.matrix_list)
-		m.no_of_col = len(m.matrix_list[0])
-		return m.detMatrix()
 	
-	def detMatrix(self):
-		if self.no_of_row == 2 and self.no_of_col == 2:
-			return self.matrix_list[0][0] * self.matrix_list[1][1] - self.matrix_list[0][1] * self.matrix_list[1][0]
-		else:
-			matrix = self.matrix_list[:]
-			det = 0
-			for i in range(self.no_of_col):
-				det += ((-1)**i) * self.matrix_list[0][i] * self.getMinor(matrix, i)
+	
+	
