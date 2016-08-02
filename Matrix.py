@@ -85,3 +85,22 @@ class Matrix:
 				if i > j:
 					self.matrix_list[i][j], self.matrix_list[j][i] = self.matrix_list[j][i], self.matrix_list[i][j]
 	
+	def getMinor(self, matrix, j):
+		del matrix[0]
+		for i in range(len(matrix)):
+			del matrix[i][j]
+		
+		m = Matrix()
+		m.matrix_list = matrix[:]
+		m.no_of_row = len(m.matrix_list)
+		m.no_of_col = len(m.matrix_list[0])
+		return m.detMatrix()
+	
+	def detMatrix(self):
+		if self.no_of_row == 2 and self.no_of_col == 2:
+			return self.matrix_list[0][0] * self.matrix_list[1][1] - self.matrix_list[0][1] * self.matrix_list[1][0]
+		else:
+			matrix = self.matrix_list[:]
+			det = 0
+			for i in range(self.no_of_col):
+				det += ((-1)**i) * self.matrix_list[0][i] * self.getMinor(matrix, i)
