@@ -14,8 +14,14 @@ Import the module in the main python file and create an object of the class "Mat
 * `addMatrix(Matrix obj)`
 >The function add the calling instance of `Matrix` to the `Matrix` instance passed as argument and returns the resultant `Matrix` instance
 
-* `divScalarMatrix(scalar)`
+* `detMatrix()`
+>The function returns the determinant value of the matrix if the calling matrix is a square matrix.
+
+* `divScalarMatrix(integer)`
 >The function divides the matrix with the scalar which is passed as argument.
+
+* `getMinor(list, integer)`
+>The function is used to get the minor matrix of a matrix corresponding to the location of the element. The function is not advisable to be used by the user is created for internal use only.
 
 * `inputMatrix()`
 >The Function inputs matrix one row at a time, enter the elements seperated by space.
@@ -23,7 +29,7 @@ Import the module in the main python file and create an object of the class "Mat
 * `mulMatrix(Matrix obj)`
 >The function returns a `Matrix` object which is the multiplied result of the calling object and the object passed as argument.
 
-* `mulScalarMatrix(scalar)`
+* `mulScalarMatrix(integer)`
 >The function multiplies the matrix with the scalar which is passed as argument. 
 
 * `printMatrix()`
