@@ -14,11 +14,17 @@ Import the module in the main python file and create an object of the class "Mat
 * `addMatrix(Matrix obj)`
 >The function add the calling instance of `Matrix` to the `Matrix` instance passed as argument and returns the resultant `Matrix` instance
 
+* `divScalarMatrix(scalar)`
+>The function divides the matrix with the scalar which is passed as argument.
+
 * `inputMatrix()`
 >The Function inputs matrix one row at a time, enter the elements seperated by space.
 
 * `mulMatrix(Matrix obj)`
 >The function returns a `Matrix` object which is the multiplied result of the calling object and the object passed as argument.
+
+* `mulScalarMatrix(scalar)`
+>The function multiplies the matrix with the scalar which is passed as argument. 
 
 * `printMatrix()`
 >The function displays the matrix on the screen.
