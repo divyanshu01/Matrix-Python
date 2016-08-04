@@ -16,10 +16,13 @@ m2.inputMatrix()
 
 #print(m1.detMatrix())
 
-#m = m1.mulMatrix(m2)
+#m4 = m1.mulMatrix(m2)
 
-#m.printMatrix()
+#m4.printMatrix()
 
 #m1.mulScalarMatrix(5)
 #m1.divScalarMatrix(5)
 #m1.printMatrix()
+
+#m5 = m1.cofactorMatrix()
+#m5.printMatrix()
