@@ -87,6 +87,19 @@ class Matrix:
 		else :
 			print("The matrix is not a square matrix")
 	
+	def inverseMatrix(self):
+		temp_list = copy.deepcopy(self.matrix_list)
+		
+		temp_matrix = Matrix()
+		temp_matrix.matrix_list = temp_list
+		temp_matrix.no_of_row = len(temp_list)
+		temp_matrix.no_of_col = len(temp_list[0])
+		det = temp_matrix.detMatrix()
+		inverse = temp_matrix.cofactorMatrix()
+		inverse.divScalarMatrix(det)
+		
+		return inverse
+	
 	def mulMatrix(self, m):
 		if self.no_of_col == m.no_of_row:
 			obj = Matrix()
