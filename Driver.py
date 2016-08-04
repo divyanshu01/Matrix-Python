@@ -26,3 +26,6 @@ m2.inputMatrix()
 
 #m5 = m1.cofactorMatrix()
 #m5.printMatrix()
+
+#m6 = m1.inverseMatrix()
+#m6.printMatrix()
