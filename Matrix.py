@@ -39,6 +39,40 @@ class Matrix:
 		else:
 			print("Division not possible")
 	
+	def getMinorForCofactor(self, matrix_list, i, j):
+		#print("Entry:", matrix_list)
+		matrix = copy.deepcopy(matrix_list)
+		del matrix[i]
+		for k in range(len(matrix)):
+			del matrix[k][j]
+		#print("After deletions", matrix_list)
+		
+		m = Matrix()
+		m.matrix_list = matrix[:]
+		m.no_of_row = len(m.matrix_list)
+		m.no_of_col = len(m.matrix_list[0])
+		x = m.detMatrix()
+		#print(m.matrix_list, m.no_of_row, m.no_of_col)
+		return x
+	
+	def cofactorMatrix(self):
+		if self.no_of_row == 2 and self.no_of_col == 2:
+			return self.matrix_list[0][0] * self.matrix_list[1][1] - self.matrix_list[0][1] * self.matrix_list[1][0]
+		else:
+			det = 0
+			cofactor = Matrix()
+			for i in range(self.no_of_row):
+				temp_list = []
+				for j in range(self.no_of_col):
+					value = ((-1)**(i + j)) * self.getMinorForCofactor(self.matrix_list, i, j);
+					temp_list.append(value)
+				cofactor.matrix_list.append(temp_list)
+			
+			cofactor.no_of_row = len(cofactor.matrix_list)
+			cofactor.no_of_col = len(cofactor.matrix_list[0])
+			
+			return cofactor
+	
 	def inputMatrix(self):
 		self.no_of_row = int(input("Enter number of rows for the matrix \n"))
 		self.no_of_col = int(input("Enter number of columns for the matrix \n"))
