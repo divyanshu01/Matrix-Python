@@ -32,7 +32,11 @@ Import the module in the main python file and create an object of the class "Mat
 
 
 * `inputMatrix()`
->The Function inputs matrix one row at a time, enter the elements seperated by space.
+>The Function inputs matrix one row at a time, enter the elements seperated by space. The matrix is stored in the form of a nested list where the element list represent a row and the list as a whole in turn represents a 2 dimensional matrix.
+
+
+* `inverseMatrix()`
+>The function returns a `Matrix` which is inverse of the original `Matrix` object.
 
 
 * `mulMatrix(Matrix obj)`
