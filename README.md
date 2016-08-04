@@ -24,7 +24,11 @@ Import the module in the main python file and create an object of the class "Mat
 
 
 * `getMinor(list, integer)`
->The function is used to get the minor matrix of a matrix corresponding to the location of the element. The function is not advisable to be used by the user is created for internal use only.
+>The function is used to get the minor matrix of a matrix corresponding to the location of the element. The function is for internal use only and therfore not advisable to be used explicitly.
+
+
+* `getMinorForCofactor(list, integer, integer)`
+>The function is used for determining the minor of a specified element required to calculate the cofactor matrix of a given matrix. The function is for internal use only and therfore not advisable to be used explicitly.
 
 
 * `inputMatrix()`
