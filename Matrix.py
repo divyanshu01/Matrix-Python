@@ -29,7 +29,7 @@ class Matrix:
 	
 	def getMinor(self, matrix_list, j):
 		
-		"""Function to get minor of a particular element required to calculate determinant of a matrix.
+		""" Function to get minor of a particular element required to calculate determinant of a matrix.
 		Used internally and not advised to use explicitly."""
 		
 		#print("Entry:", matrix_list)
