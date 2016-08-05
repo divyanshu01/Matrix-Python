@@ -119,16 +119,15 @@ class Matrix:
 		
 		self.no_of_row = int(input("Enter number of rows for the matrix \n"))
 		self.no_of_col = int(input("Enter number of columns for the matrix \n"))
-		if self.no_of_row == self.no_of_col:
-			for i in range(self.no_of_col):
-				print("Enter row", (i + 1), "of matrix(elements seperated by space)")
-				temp_list = []
-				temp_list = input().split(" ")
-				for i in range(len(temp_list)):
-					temp_list[i] = int(temp_list[i])
-				self.matrix_list.append(temp_list)
-		else :
+		if self.no_of_row != self.no_of_col:
 			print("The matrix is not a square matrix")
+		for i in range(self.no_of_col):
+			print("Enter row", (i + 1), "of matrix(elements seperated by space)")
+			temp_list = []
+			temp_list = input().split(" ")
+			for i in range(len(temp_list)):
+				temp_list[i] = int(temp_list[i])
+			self.matrix_list.append(temp_list)
 	
 	def inverseMatrix(self):
 		""" The function returns a new Matrix object which is the inverse of the current Matrix object that is used
