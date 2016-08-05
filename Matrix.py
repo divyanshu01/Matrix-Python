@@ -7,6 +7,9 @@ class Matrix:
 		self.no_of_col = 0
 	
 	def addMatrix(self, mat):
+		
+		""" The function adds two matrices and returns the new object of class Matrix. """
+		
 		if self.no_of_row == mat.no_of_row:
 			if self.no_of_col == mat.no_of_col:
 				m = Matrix()
@@ -25,6 +28,10 @@ class Matrix:
 			print("Number of rows are not equal")
 	
 	def getMinor(self, matrix_list, j):
+		
+		"""Function to get minor of a particular element required to calculate determinant of a matrix.
+		Used internally and not advised to use explicitly."""
+		
 		#print("Entry:", matrix_list)
 		matrix = copy.deepcopy(matrix_list)
 		del matrix[0]
@@ -41,6 +48,10 @@ class Matrix:
 		return x
 	
 	def detMatrix(self):
+		
+		""" The function returns determinant of a matrix.
+		The function is called by object of Matrix class. """
+		
 		if self.no_of_row == 2 and self.no_of_col == 2:
 			return self.matrix_list[0][0] * self.matrix_list[1][1] - self.matrix_list[0][1] * self.matrix_list[1][0]
 		else:
@@ -50,6 +61,10 @@ class Matrix:
 			return det
 	
 	def divScalarMatrix(self, scalar):
+		
+		"""This function divides all the elements of the calling matrix by a given scalar value.
+		This function is called by object of class Matrix and a scalar value is passed as an argument."""
+		
 		if(scalar != 0):
 			for i in range(self.no_of_row):
 				for j in range(self.no_of_col):
@@ -58,6 +73,10 @@ class Matrix:
 			print("Division not possible")
 	
 	def getMinorForCofactor(self, matrix_list, i, j):
+		
+		""" The function returns minor for a required element and is used in the process of finding co-factor of a
+		matrix. The function is for internal use and is not advisable to use explicitly. """
+		
 		#print("Entry:", matrix_list)
 		matrix = copy.deepcopy(matrix_list)
 		del matrix[i]
@@ -74,6 +93,9 @@ class Matrix:
 		return x
 	
 	def cofactorMatrix(self):
+		
+		""" The function returns the cofactor of the matrix of the object that is used to call this function. """
+		
 		if self.no_of_row == 2 and self.no_of_col == 2:
 			return self.matrix_list[0][0] * self.matrix_list[1][1] - self.matrix_list[0][1] * self.matrix_list[1][0]
 		else:
@@ -92,6 +114,9 @@ class Matrix:
 			return cofactor
 	
 	def inputMatrix(self):
+		
+		""" The function takes input for the matrix, the input is not very flexible though. """
+		
 		self.no_of_row = int(input("Enter number of rows for the matrix \n"))
 		self.no_of_col = int(input("Enter number of columns for the matrix \n"))
 		if self.no_of_row == self.no_of_col:
@@ -106,6 +131,9 @@ class Matrix:
 			print("The matrix is not a square matrix")
 	
 	def inverseMatrix(self):
+		""" The function returns a new Matrix object which is the inverse of the current Matrix object that is used
+		to call the function."""
+		
 		temp_list = copy.deepcopy(self.matrix_list)
 		
 		temp_matrix = Matrix()
@@ -119,6 +147,10 @@ class Matrix:
 		return inverse
 	
 	def mulMatrix(self, m):
+		
+		""" The function returns a new Matrix object which is the multiplied result of the two matrices. The function
+		is called by a Matrix object and the other Matrix object which is to be multiplied is passed as an argument. """
+		
 		if self.no_of_col == m.no_of_row:
 			obj = Matrix()
 			obj.no_of_row = self.no_of_row
@@ -134,11 +166,18 @@ class Matrix:
 			return obj
 	
 	def mulScalarMatrix(self, scalar):
+		
+		""" The function multiplied the calling matrix with a scalar value which is passed as argument to the
+		function. """
+		
 		for i in range(self.no_of_row):
 			for j in range(self.no_of_col):
 				self.matrix_list[i][j] *= scalar
 	
 	def printMatrix(self):
+		
+		""" The function prints the matrix of the calling Matrix object. """
+		
 		if len(self.matrix_list) != 0:
 			for i in range(self.no_of_row):
 				for j in range(self.no_of_col):
@@ -149,6 +188,9 @@ class Matrix:
 				
 
 	def subMatrix(self, mat):
+		
+		""" The function subtracts the matrix passed as an argument from the calling matrix. """
+		
 		if self.no_of_row == mat.no_of_row:
 			if self.no_of_col == mat.no_of_col:
 				m = Matrix()
@@ -167,34 +209,11 @@ class Matrix:
 			print("Number of rows are not equal")
 	
 	def transMatrix(self):
+		
+		""" The matrix transposes the current matrix """
+		
 		for i in range(self.no_of_row):
 			for j in range(self.no_of_col):
 				if i > j:
 					self.matrix_list[i][j], self.matrix_list[j][i] = self.matrix_list[j][i], self.matrix_list[i][j]
 	
-	
-	def getMinorForCofactor(self, matrix_list, i, j):
-		#print("Entry:", matrix_list)
-		matrix = copy.deepcopy(matrix_list)
-		del matrix[i]
-		for k in range(len(matrix)):
-			del matrix[k][j]
-		#print("After deletions", matrix_list)
-		
-		m = Matrix()
-		m.matrix_list = matrix[:]
-		m.no_of_row = len(m.matrix_list)
-		m.no_of_col = len(m.matrix_list[0])
-		x = m.detMatrix()
-		#print(m.matrix_list, m.no_of_row, m.no_of_col)
-		return x
-	
-	def getCofactorMatrix(self):
-		if self.no_of_row == 2 and self.no_of_col == 2:
-			return self.matrix_list[0][0] * self.matrix_list[1][1] - self.matrix_list[0][1] * self.matrix_list[1][0]
-		else:
-			det = 0
-			for i in range(self.no_of_row):
-				for j in range(self.no_of_col):
-					det += ((-1)**(i + j)) * self.getMinorForCofactor(self.matrix_list, i, j);
-			return det
